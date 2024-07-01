@@ -1,23 +1,19 @@
 <?php
 
-class SomeObject {
-    protected $name;
+require_once __DIR__ . "/vendor/autoload.php";
 
-    public function __construct(string $name) { }
+use App\Components\{SomeObjectSqS, SomeObjectNats};
 
-    public function getObjectName() { }
-}
+class SomeObjectsHandler
+{
 
-class SomeObjectsHandler {
-    public function __construct() { }
-
-    public function handleObjects(array $objects): array {
+    public function handleObjects(array $objects): array
+    {
         $handlers = [];
+
         foreach ($objects as $object) {
-            if ($object->getObjectName() == 'object_1')
-                $handlers[] = 'handle_object_1';
-            if ($object->getObjectName() == 'object_2')
-                $handlers[] = 'handle_object_2';
+
+            $handlers[] = $object->handle();
         }
 
         return $handlers;
@@ -25,8 +21,8 @@ class SomeObjectsHandler {
 }
 
 $objects = [
-    new SomeObject('object_1'),
-    new SomeObject('object_2')
+    new SomeObjectSqS('object_sqs'),
+    new SomeObjectNats('object_nats'),
 ];
 
 $soh = new SomeObjectsHandler();

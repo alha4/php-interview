@@ -1,11 +1,13 @@
 <?php
 
-use App\Repository\SecurityRepositoryInterface;
+use Aarchitecture\Repository\SecurityRepositoryInterface;
 
+/**
+ * @see /tests/concept_test.php
+ */
 class Concept
 {
     private $client;
-
     private SecurityRepositoryInterface $security;
 
     public function __construct(SecurityRepositoryInterface $security)
@@ -32,5 +34,10 @@ class Concept
     private function getSecretKey()
     {
         return $this->security->getSecretKey();
+    }
+
+    private function saveSecretKey(string $secretKey)
+    {
+        $this->security->saveSecretKey($secretKey);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Components;
+namespace Aarchitecture\Components;
 
 interface ObjectInterface
 {

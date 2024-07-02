@@ -1,0 +1,1 @@
+SELECT g.id, g.name FROM goods g INNER JOIN goods_tags gt ON g.id = gt.goods_id;

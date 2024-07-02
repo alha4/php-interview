@@ -4,6 +4,7 @@ enum ERRORS: string
   case KEY_NOT_FOUND = 'Key not found';
   case INVALID_KEYMAP = 'Invalid keymap';
 };
+
 function unique(array $array): array
 {
 
@@ -21,6 +22,7 @@ function unique(array $array): array
     return false;
   }, ARRAY_FILTER_USE_BOTH);
 }
+
 function sortBy(array &$array, string $key): void
 {
   if (!array_key_exists($key, $array[0])) {
@@ -37,6 +39,7 @@ function sortBy(array &$array, string $key): void
     return $a[$key] <=> $b[$key];
   });
 }
+
 function findBy(array $filter, array $array): array
 {
 
@@ -53,6 +56,7 @@ function findBy(array $filter, array $array): array
     return $item[$key] == $value;
   }, ARRAY_FILTER_USE_BOTH);
 }
+
 function flipBy(array $keymap, array $array): array
 {
 

@@ -1,4 +1,5 @@
 <?php
+
 enum ERRORS: string
 {
   case KEY_NOT_FOUND = 'Key not found';

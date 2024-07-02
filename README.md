@@ -6,11 +6,11 @@
 ## (код по SQL в папке `/sql`)
 
 # Практические и архитектурные задачи
-## (код по SOLID `/src`)
+## (код по SOLID `/architecture/src`)
 
-1. solid_o.php
-2. solid_d.php
-3. /tests/concept_test.php, 
+1. architecture/solid_o.php
+2. architecture/solid_d.php
+3. architecture/tests/concept_test.php, 
 ```
 
 ```
